@@ -1,0 +1,281 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    width: 100%;
+  }
+  
+  header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    z-index: 1000;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 15px;
+    
+  }
+  
+  nav ul li {
+    margin: 0 25px; /* Increased spacing */
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 15px; /* Added padding */
+  }
+  
+  .section {
+     /* Each section takes full screen height */
+    background-color: #ffffff;
+  }
+  .welcome h1 {
+     text-align: left;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  
+  }
+  .welcome h1{
+     text-align: left;
+  }
+  .announcements {
+     text-align: left;
+     background-color: rgb(238, 238, 238);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  .cards > .card {
+    padding: 20px;
+    font-size: larger;
+  }
+  .cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #home .container {
+    width: 1200px;
+  }
+  #lessons .container {
+    width: 1200px;
+    margin: auto;
+  }
+  
+  .container {
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #home, #lessons, #assignments{
+    padding-top: 90px;
+  }
+  section .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+  }
+  #home .container div {
+    padding: 20px 15px ;
+    
+  }
+  
+  
+  h1, h2, h3 {
+    color: #333;
+  }
+  
+  .cards>.card {
+    background-color: rgb(238, 238, 238);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  .body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#section-title {
+    margin-top: 20px;
+    color: #333;
+}
+
+#cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    width: 80%;
+    max-width: 1200px;
+}
+
+#card {
+    background: hsl(187, 100%, 92%);
+    border-radius: 20px;
+    box-shadow: 15px 12px 20px 0px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s;
+    padding: 0;
+    margin: 0;
+}
+#about {
+    background-color: rgb(255 255 255);
+    padding-top: 15vh ;
+}
+#assignments #card {
+    background: hsl(93, 57%, 69%);
+    border-radius: 20px;
+    box-shadow: 15px 12px 20px 0px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s;
+    padding: 0;
+    margin: 0;
+}
+
+.body>.card:hover {
+    transform: translateY(-5px);
+}
+
+.body>.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #00a005;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card-content a:hover {
+    text-decoration: underline;
+}
+
+/* Specific styles for each card */
+#card{
+    /* Custom styles for card 1 */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+#card-image{
+    /* Custom image styles for card 1 */
+    width: 100%;
+
+}
+
+.lastcontainer {
+ display: flex;
+ flex-direction: column; 
+}
+  
+    
+
+
+
+
+
+
+  
+
+/* Ensure containers are responsive */
+.cards-container {
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding and borders don't affect width */
+}
+
+/* Ensure the card images fit within their container */
+.card img {
+    max-width: 100%;
+    height: auto;
+}
+@media screen and (max-width: 1024px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
+}
+.journey-quote-container p {
+  font-size: 1.3em;
+  text-align: center;
+}
+.social-links a {
+  color: blue;
+  font-weight: bold;
+  padding: 20px;
+}
+/* Responsive Design for smaller screens */
+@media screen and (max-width: 1250px) {
+  /* Add your styles here */
+  
+
+  .container {
+    width: 90%;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  #home .container {
+    width: 90%;
+    flex-direction: column;
+}
+  #home .container .card {
+    width: 90%;
+    
+}
+header {
+  position: relative;
+}
+  ul {
+    height: 20vh;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+  }
+  a {
+    padding: 20px;
+  }
+
+
+}
