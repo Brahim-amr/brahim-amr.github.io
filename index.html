@@ -13,15 +13,104 @@
   <!-- Fixed Header -->
   <header>
     <nav class="container">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#lessons">Lessons</a></li>
-        <li><a href="#assignments">Assignments</a></li>
-        <li><a href="#resources">Resources</a></li>
-        <li><a href="#about">About Us</a></li>
-      </ul>
+        <div class="hamburger" id="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul id="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#lessons">Lessons</a></li>
+            <li><a href="#assignments">Assignments</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#about">About Us</a></li>
+        </ul>
     </nav>
-  </header>
+</header>
+
+<style>
+    /* Add these styles to your existing CSS */
+    .hamburger {
+        display: none;
+        cursor: pointer;
+        padding: 15px;
+    }
+    
+    .line {
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+    }
+    
+    /* Hamburger animation when active */
+    .hamburger.active .line:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .hamburger.active .line:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .line:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
+    @media (max-width: 900px) {
+        .hamburger {
+            display: block;
+        }
+        
+        nav ul {
+            position: fixed;
+            top: 80px;
+            left: -120%;
+            width: 100%;
+            height: calc(100vh - 80px);
+            background-color: #333;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 30px;
+            transition: all 0.5s ease;
+        }
+        
+        nav ul.active {
+            left: 0;
+        }
+        
+        nav ul li {
+            margin: 15px 0;
+            width: 100%;
+            text-align: center;
+        }
+        
+        nav ul li a {
+            display: block;
+            padding: 20px;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    });
+</script>
 
   <!-- Home Section -->
   <section id="home" class="section">
@@ -585,6 +674,86 @@
       }
       
     }
+    
+    @media (max-width: 800px) {
+  .resources-table {
+    display: block;
+    width: 100%;
+    border: none;
+  }
+
+  .resources-table caption {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+    padding-bottom: 10px;
+    width: max-content;
+  }
+
+  .resources-table thead {
+    display: none; /* Hide headers */
+  }
+
+  .resources-table tbody {
+    display: flex;
+    flex-direction: column; /* Stack rows as cards */
+    align-items: center;
+  }
+
+  .resources-table tr {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+  }
+
+  /* Display level as a title */
+  .resources-table td:first-child {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+
+  .resources-table td:not(:first-child) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+  }
+
+  .resources-table td:not(:first-child)::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  .resources-table td a {
+    text-align: center;
+    font-weight: 500;
+    color: #0066cc;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .resources-table td:last-child {
+    border-bottom: none;
+  }
+}
+
   </style>
   </div>
 
@@ -696,7 +865,7 @@
     background: #fff;
     border-radius: 12px;
     padding: 30px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgb(145 133 133 / 58%);
     transition: transform 0.3s ease;
   }
   
@@ -778,7 +947,8 @@
     background: #fff;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgb(145 133 133 / 58%);
+    transition: transform 0.3s ease;
   }
   
   .story-icon {
@@ -1019,7 +1189,7 @@
     }
     
     .connection-card {
-      width: 100%;
+      width: 85%;
       margin-top: 10px;
     }
     

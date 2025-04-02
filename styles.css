@@ -264,18 +264,7 @@ body {
     width: 90%;
     
 }
-header {
-  position: relative;
-}
-  ul {
-    height: 20vh;
-    flex-direction: column;
-    text-align: center;
-    justify-content: space-between;
-  }
-  a {
-    padding: 20px;
-  }
+
 
 
 }
